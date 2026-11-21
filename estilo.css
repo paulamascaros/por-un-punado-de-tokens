@@ -1,0 +1,138 @@
+:root {
+  --papel: #ffffff;
+  --tinta: #111111;
+  --tenue: #5c5c5c;
+  --linea: #d6d6d6;
+  --titulo: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --lectura: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --rotulo: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --papel: #121212;
+    --tinta: #f2f2f2;
+    --tenue: #a8a8a8;
+    --linea: #3a3a3a;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--lectura);
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--tinta); outline-offset: 4px; }
+svg { display: block; max-width: 100%; height: auto; color: var(--tinta); }
+
+/* Portada */
+.portada {
+  text-align: center;
+  padding: clamp(3rem, 10vw, 7rem) 1.25rem 1rem;
+}
+.subtitulo {
+  margin: 0 0 1rem;
+  font-family: var(--rotulo);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--tenue);
+}
+.portada h1 {
+  margin: 0;
+  font-family: var(--titulo);
+  font-weight: 400;
+  font-size: clamp(3rem, 11vw, 8.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+}
+.friso { width: min(100%, 1100px); margin: 1.5rem auto 0; }
+
+main { padding: 0 1.25rem; }
+.intro { max-width: 34rem; margin: 3rem auto 0; }
+.intro p { margin: 0 0 1.1em; }
+.intro cite { font-style: italic; }
+
+/* Índice */
+.indice { max-width: 46rem; margin: 4rem auto 0; }
+.indice h2 {
+  font-family: var(--rotulo);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--tenue);
+  margin: 0 0 0.5rem;
+}
+.indice ol { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--linea); }
+.indice li { border-bottom: 1px solid var(--linea); }
+.relato {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.5rem 0;
+  text-decoration: none;
+}
+.mini svg { width: 100%; }
+.titulo {
+  display: block;
+  font-family: var(--titulo);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  line-height: 1.05;
+}
+.arranque { display: block; margin-top: 0.4rem; color: var(--tenue); font-size: 1.05rem; line-height: 1.5; }
+.relato:hover .titulo { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+
+/* Relato */
+.volver {
+  padding: 1.25rem;
+  font-family: var(--rotulo);
+  font-size: 0.95rem;
+}
+.volver a { text-decoration: none; color: var(--tenue); }
+.volver a:hover { color: var(--tinta); }
+.pieza article { max-width: 34rem; margin: 0 auto; }
+.ilustracion.grande { width: min(100%, 26rem); margin: 1rem auto 0; }
+.pieza h1 {
+  font-family: var(--titulo);
+  font-weight: 400;
+  font-size: clamp(3rem, 12vw, 6rem);
+  line-height: 1;
+  text-align: center;
+  margin: 0.5rem 0 2.5rem;
+}
+.cuerpo p { margin: 0 0 1em; hyphens: auto; }
+.cuerpo p:last-child { margin-bottom: 0; }
+
+.pasos {
+  max-width: 34rem;
+  margin: 4rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--linea);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.pasos a { text-decoration: none; display: flex; flex-direction: column; min-height: 44px; }
+.pasos .siguiente { text-align: right; margin-left: auto; }
+.pasos .dir { font-family: var(--rotulo); font-size: 0.85rem; color: var(--tenue); }
+.pasos .t { font-family: var(--titulo); font-size: 1.8rem; line-height: 1.1; }
+.pasos a:hover .t { text-decoration: underline; text-decoration-thickness: 1px; }
+
+footer {
+  max-width: 46rem;
+  margin: 5rem auto 0;
+  padding: 2rem 1.25rem 3rem;
+  font-family: var(--rotulo);
+  font-size: 0.9rem;
+  color: var(--tenue);
+}
+footer p { margin: 0; }
+
+@media (max-width: 34rem) {
+  .relato { grid-template-columns: 5rem 1fr; gap: 1rem; }
+}
