@@ -51,7 +51,7 @@ svg { display: block; max-width: 100%; height: auto; color: var(--tinta); }
   line-height: 0.95;
   letter-spacing: -0.01em;
 }
-.friso { width: min(100%, 1100px); margin: 1.5rem auto 0; }
+.friso { width: 100%; max-width: 34rem; margin: 2.5rem auto 0; }
 
 main { padding: 0 1.25rem; }
 .intro { max-width: 34rem; margin: 3rem auto 0; }
